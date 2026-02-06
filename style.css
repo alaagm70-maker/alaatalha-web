@@ -123,7 +123,7 @@ body::before {
 }
 
 .secondary:hover {
-    background: #00f2fe !important;
+    background: #00d6fc !important;
     color: black !important;
-    box-shadow: 0 0 20px #00f2fe;
+    box-shadow: 0 0 20px #0066fe;
 }

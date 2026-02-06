@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>Alaa Talha | The first website</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+       
+        #typewriter {
+            border-left: 3px solid #00fe72;
+            padding-left: 8px;
+            margin-right: 5px;
+            animation: blink 0.7s infinite;
+        }
+        @keyframes blink { 50% { border-color: transparent; } }
+        body { transition: background-color 2s ease; }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h1>Alaa Talha</h1>
+        <p id="typewriter" style="font-size: 1.5rem; font-weight: bold; min-height: 1.6em;"></p>
+        <button class="shiny-btn">استعرض مشاريعي على gitHub <a href="https://github.com/alaagm70-maker/alaatalha-web" target="_blank" class="shiny-btn secondary">اضغط هنا</a></button> 
+        <a href="https://www.instagram.com/alaa_gaming75/" target="_blank" class="shiny-btn secondary">تابعوني على instagram</a>
+    </div>
+
+    <script>
+        const textElement = document.getElementById('typewriter');
+        const bodyElement = document.body;
+
+        const data = [
+            { text: "professional developer games", color: "#0f172a" },
+            { text: "graphical program maker", color: "#1e1b4b" },
+            { text:  "python languige programer", color: "#064e3b" },
+            { text: "professional web world", color: "#450a0a" }
+        ];
+
+        let index = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+
+        function typeEffect() {
+            const { text, color } = data[index];
+            bodyElement.style.backgroundColor = color;
+
+            if (isDeleting) {
+                textElement.textContent = text.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                textElement.textContent = text.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            let speed = isDeleting ? 50 : 150;
+
+            if (!isDeleting && charIndex === text.length) {
+                isDeleting = true;
+                speed = 2000;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                index = (index + 1) % data.length;
+                speed = 500;
+            }
+
+            setTimeout(typeEffect, speed);
+        }
+
+        window.onload = typeEffect; 
+    </script>
+</body>
+</html>
+</html> <a href="https://yugsh4as-alt.github.io/MyFirst-website/" target="_blank" class="shiny-btn secondary">موقع ياسين ساحي (الخباش)</a>
+
+
